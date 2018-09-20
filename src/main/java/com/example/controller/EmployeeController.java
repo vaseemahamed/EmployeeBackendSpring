@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,7 +36,7 @@ public class EmployeeController {
 			@ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
 			@ApiResponse(code = 404, message = "The resource you were trying to reach is not found") })
 	@RequestMapping(value = "/getAllEmployees", method = RequestMethod.GET)
-	public Iterable<Employee> getAllProducts() {
+	public List<Employee> getAllEmployees() {
 		return employeeService.getAllEmployee();
 	}
 
